@@ -1,4 +1,4 @@
-ERC20_ABI = [
+USDC_ABI = [
     {
         "constant": True,
         "inputs": [{"name": "_owner", "type": "address"}],

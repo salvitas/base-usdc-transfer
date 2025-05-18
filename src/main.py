@@ -29,6 +29,7 @@ def main():
     try:
         usdc = get_token_contract(w3, USDC_CONTRACT)
         balance = get_token_balance(usdc, wallet_address)
+        print(f"USDC Balance: {balance}")
         if balance < TRANSFER_AMOUNT:
             msg = f"❗ Insufficient USDC. Balance: {balance}, Required: {TRANSFER_AMOUNT}"
             logging.warning(msg)
@@ -42,7 +43,7 @@ def main():
             return
 
         tx_hash = send_usdc(w3, account, usdc, TARGET_WALLET, TRANSFER_AMOUNT)
-        msg = f"✅ USDC Transfer successful. TX Hash: {tx_hash}"
+        msg = f"✅ USDC Transfer successful. TX Hash: https://basescan.org/tx/0x{tx_hash}"
         logging.info(msg)
         send_telegram_message(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, msg)
 
