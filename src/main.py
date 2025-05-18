@@ -6,7 +6,7 @@ from telegram import send_telegram_message
 from utils import get_token_balance, check_eth_balance, get_token_contract, send_usdc
 
 # Setup logging
-logging.basicConfig(filename='../logs/transfer.log', level=logging.INFO,
+logging.basicConfig(filename='./logs/transfer.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 load_dotenv()

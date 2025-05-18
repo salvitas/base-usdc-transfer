@@ -24,6 +24,6 @@ def send_usdc(w3, account, contract, to_address, amount):
         'nonce': nonce
     })
     signed_txn = account.sign_transaction(txn)
-    tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+    tx_hash = w3.eth.send_raw_transaction(signed_txn.raw_transaction)
     w3.eth.wait_for_transaction_receipt(tx_hash)
     return tx_hash.hex()
