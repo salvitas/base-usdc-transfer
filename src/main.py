@@ -1,4 +1,5 @@
 import os
+import sys
 import logging
 from dotenv import load_dotenv
 from web3 import Web3
@@ -16,7 +17,7 @@ RPC_URL = os.getenv("BASE_RPC_URL")
 PRIVATE_KEY = os.getenv("PRIVATE_KEY")
 USDC_CONTRACT = os.getenv("USDC_CONTRACT")
 TARGET_WALLET = os.getenv("TARGET_WALLET")
-TRANSFER_AMOUNT = float(os.getenv("TRANSFER_AMOUNT"))
+TRANSFER_AMOUNT = float(sys.argv[1])
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
